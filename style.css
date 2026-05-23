@@ -1,76 +1,136 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #efefef;
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+body{
+    width:100%;
+    height:100vh;
+    background:#efefef;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.container {
-  position: relative;
-  width: 900px;
-  height: 600px;
+.container{
+    position:relative;
+    width:1000px;
+    height:700px;
 }
 
-.form-container {
-  position: absolute;
-  top: 120px;
-  left: 250px;
-  width: 300px;
-  z-index: 10;
+/* FORM */
+
+.form-container{
+    position:absolute;
+    top:160px;
+    left:330px;
+    width:300px;
+    z-index:10;
 }
 
-.form-row {
-  width: 100%;
-  margin-bottom: 15px;
+.form-row{
+    width:100%;
+    margin-bottom:15px;
 }
 
 .form-row input[type="text"],
-.form-row input[type="email"] {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  border: 2px solid #ccc;
-  outline: none;
-  background: white;
+.form-row input[type="email"]{
+    width:100%;
+    height:40px;
+    border:1px solid #bbb;
+    background:white;
+    outline:none;
+    padding:10px;
+    transition:.3s;
 }
 
-.checkbox-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
+.form-row input[type="text"]:focus,
+.form-row input[type="email"]:focus{
+    border-color:black;
 }
 
-.form-row input[type="submit"] {
-  width: 120px;
-  height: 40px;
-  border: none;
-  background: black;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
 }
 
-.form-row input[type="submit"]:hover {
-  transform: scale(1.05);
+.form-row input[type="submit"]{
+    width:120px;
+    height:40px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.machine {
-  width: 100%;
-  height: 100%;
+.form-row input[type="submit"]:hover{
+    transform:scale(1.06);
 }
 
-.machine circle,
-.machine line {
-  fill: none;
+/* SVG */
+
+.machine{
+    position:absolute;
+    width:100%;
+    height:100%;
+    inset:0;
+}
+
+/* ANIMATIONS */
+
+.gear-big{
+    animation:spin 10s linear infinite;
+    transform-origin:760px 130px;
+}
+
+.gear-small{
+    animation:spinReverse 4s linear infinite;
+    transform-origin:680px 210px;
+}
+
+.gear-medium{
+    animation:spin 6s linear infinite;
+    transform-origin:720px 260px;
+}
+
+.pendulum{
+    animation:swing 2s ease-in-out infinite alternate;
+    transform-origin:420px 360px;
+}
+
+/* KEYFRAMES */
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes spinReverse{
+    from{
+        transform:rotate(360deg);
+    }
+    to{
+        transform:rotate(0deg);
+    }
+}
+
+@keyframes swing{
+    from{
+        transform:rotate(-12deg);
+    }
+    to{
+        transform:rotate(12deg);
+    }
 }
