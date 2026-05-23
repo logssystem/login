@@ -1,65 +1,171 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário Animado</title>
+  <title>Animated Form Machine</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
 
-  <div class="form-container">
+    <!-- FORM -->
+    <div class="form-container">
 
-    <div class="form-row">
-      <input type="text" placeholder="name" required>
+        <div class="form-row">
+            <input type="text" placeholder="name">
+        </div>
+
+        <div class="form-row">
+            <input type="email" placeholder="e-mail">
+        </div>
+
+        <div class="form-row checkbox-row">
+            <input type="checkbox">
+            <span>Subscribe to whatever</span>
+        </div>
+
+        <div class="form-row">
+            <input type="submit" value="submit">
+        </div>
+
     </div>
 
-    <div class="form-row">
-      <input type="email" placeholder="e-mail" required>
-    </div>
+    <!-- MACHINE -->
+    <svg class="machine" viewBox="0 0 1000 700">
 
-    <div class="form-row checkbox-row">
-      <input type="checkbox">
-      <span>Subscribe to whatever</span>
-    </div>
+        <!-- BIG GEAR -->
+        <g class="gear-big">
 
-    <div class="form-row">
-      <input type="submit" value="submit">
-    </div>
+            <circle cx="760" cy="130" r="70"
+                fill="none"
+                stroke="#222"
+                stroke-width="4"/>
 
-  </div>
+            <circle cx="760" cy="130" r="22"
+                fill="none"
+                stroke="#222"
+                stroke-width="4"/>
 
-  <!-- SVG ANIMADO -->
-  <svg class="machine" viewBox="0 0 800 600">
+            <!-- teeth -->
+            <g>
+                <line x1="760" y1="40" x2="760" y2="20"/>
+                <line x1="760" y1="240" x2="760" y2="220"/>
+                <line x1="670" y1="130" x2="650" y2="130"/>
+                <line x1="870" y1="130" x2="890" y2="130"/>
+            </g>
 
-    <!-- Engrenagem grande -->
-    <g class="gear gear-big">
-      <circle cx="620" cy="120" r="60" />
-      <circle cx="620" cy="120" r="20" class="inner" />
-    </g>
+        </g>
 
-    <!-- Engrenagem pequena -->
-    <g class="gear gear-small">
-      <circle cx="540" cy="170" r="25" />
-      <circle cx="540" cy="170" r="8" class="inner" />
-    </g>
+        <!-- SMALL GEAR -->
+        <g class="gear-small">
 
-    <!-- Linha -->
-    <line x1="220" y1="250" x2="520" y2="250" />
+            <circle cx="680" cy="210" r="20"
+                fill="none"
+                stroke="#222"
+                stroke-width="4"/>
 
-    <!-- Pêndulo -->
-    <line class="pendulum-line" x1="520" y1="250" x2="620" y2="400" />
+            <circle cx="680" cy="210" r="5"
+                fill="#222"/>
 
-    <circle cx="520" cy="250" r="8" class="pivot" />
+        </g>
 
-    <circle class="weight" cx="620" cy="400" r="20" />
+        <!-- MEDIUM GEAR -->
+        <g class="gear-medium">
 
-  </svg>
+            <circle cx="720" cy="260" r="28"
+                fill="none"
+                stroke="#222"
+                stroke-width="4"/>
+
+            <circle cx="720" cy="260" r="8"
+                fill="#222"/>
+
+        </g>
+
+        <!-- TOP LINES -->
+        <line x1="350" y1="190"
+              x2="680" y2="190"
+              stroke="#222"
+              stroke-width="2"/>
+
+        <line x1="350" y1="230"
+              x2="680" y2="230"
+              stroke="#222"
+              stroke-width="2"/>
+
+        <!-- LEFT MACHINE -->
+        <rect x="160"
+              y="420"
+              width="35"
+              height="120"
+              rx="15"
+              fill="none"
+              stroke="#222"
+              stroke-width="3"/>
+
+        <circle cx="178"
+                cy="440"
+                r="4"
+                fill="#222"/>
+
+        <circle cx="178"
+                cy="470"
+                r="4"
+                fill="#222"/>
+
+        <circle cx="178"
+                cy="500"
+                r="4"
+                fill="#222"/>
+
+        <!-- ARM -->
+        <line x1="180"
+              y1="470"
+              x2="380"
+              y2="420"
+              stroke="#222"
+              stroke-width="4"/>
+
+        <!-- VERTICAL BAR -->
+        <line x1="420"
+              y1="260"
+              x2="420"
+              y2="560"
+              stroke="#222"
+              stroke-width="4"/>
+
+        <!-- PENDULUM -->
+        <g class="pendulum">
+
+            <line x1="420"
+                  y1="360"
+                  x2="620"
+                  y2="500"
+                  stroke="#222"
+                  stroke-width="4"/>
+
+            <circle cx="420"
+                    cy="360"
+                    r="8"
+                    fill="#222"/>
+
+            <circle cx="620"
+                    cy="500"
+                    r="26"
+                    fill="#222"/>
+
+        </g>
+
+    </svg>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
