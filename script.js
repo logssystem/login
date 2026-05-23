@@ -12,7 +12,7 @@ inputs.forEach(input => {
 
         }else{
 
-            input.style.borderColor = '#bcbcbc';
+            input.style.borderColor = '#bdbdbd';
 
         }
 
