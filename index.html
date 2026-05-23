@@ -1,39 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Login for get no chill</title>
-    <link rel="stylesheet" href="style4.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Animado</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
-    <div class="form-container">
 
-        <label class="form-row">
-            <input autocomplete="one-time-code" type="text" id="name" name="name" placeholder="name" required>
-        </label>
+  <div class="form-container">
 
-        <label class="form-row">
-            <input autocomplete="one-time-code" type="email" id="email" name="email" placeholder="e-mail" required>
-        </label>
-
-        <label class="form-row">
-            <input type="checkbox" id="subscribe" name="subscribe">
-            Subscribe to whatever
-        </label>
-
-        <div class="form-row">
-            <input type="submit" value="submit">
-        </div>
-
+    <div class="form-row">
+      <input type="text" placeholder="name" required>
     </div>
+
+    <div class="form-row">
+      <input type="email" placeholder="e-mail" required>
+    </div>
+
+    <div class="form-row checkbox-row">
+      <input type="checkbox">
+      <span>Subscribe to whatever</span>
+    </div>
+
+    <div class="form-row">
+      <input type="submit" value="submit">
+    </div>
+
+  </div>
+
+  <!-- SVG ANIMADO -->
+  <svg class="machine" viewBox="0 0 800 600">
+
+    <!-- Engrenagem grande -->
+    <g class="gear gear-big">
+      <circle cx="620" cy="120" r="60" />
+      <circle cx="620" cy="120" r="20" class="inner" />
+    </g>
+
+    <!-- Engrenagem pequena -->
+    <g class="gear gear-small">
+      <circle cx="540" cy="170" r="25" />
+      <circle cx="540" cy="170" r="8" class="inner" />
+    </g>
+
+    <!-- Linha -->
+    <line x1="220" y1="250" x2="520" y2="250" />
+
+    <!-- Pêndulo -->
+    <line class="pendulum-line" x1="520" y1="250" x2="620" y2="400" />
+
+    <circle cx="520" cy="250" r="8" class="pivot" />
+
+    <circle class="weight" cx="620" cy="400" r="20" />
+
+  </svg>
+
 </div>
 
-<svg viewBox="0 0 1000 1000" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="710" y="527" width="16" height="47" rx="10"></rect>
-</svg>
-
+<script src="script.js"></script>
 </body>
 </html>
