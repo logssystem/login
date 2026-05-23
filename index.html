@@ -1,171 +1,137 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Form Machine</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- FORM -->
-    <div class="form-container">
+        <!-- FORM -->
+        <div class="form-container">
 
-        <div class="form-row">
-            <input type="text" placeholder="name">
+            <div class="form-row">
+                <input type="text" placeholder="name">
+            </div>
+
+            <div class="form-row">
+                <input type="email" placeholder="e-mail">
+            </div>
+
+            <div class="form-row checkbox-row">
+                <input type="checkbox">
+                <span>Subscribe to whatever</span>
+            </div>
+
+            <div class="form-row">
+                <button>submit</button>
+            </div>
+
         </div>
 
-        <div class="form-row">
-            <input type="email" placeholder="e-mail">
-        </div>
+        <!-- SVG MACHINE -->
+        <svg class="machine" viewBox="0 0 1000 700">
 
-        <div class="form-row checkbox-row">
-            <input type="checkbox">
-            <span>Subscribe to whatever</span>
-        </div>
+            <!-- BIG GEAR -->
+            <g class="gear-big">
 
-        <div class="form-row">
-            <input type="submit" value="submit">
-        </div>
+                <circle cx="720" cy="140" r="55" />
+                <circle cx="720" cy="140" r="18" />
+
+                <!-- TEETH -->
+                <g class="teeth">
+
+                    <line x1="720" y1="60" x2="720" y2="40"/>
+                    <line x1="720" y1="240" x2="720" y2="220"/>
+
+                    <line x1="640" y1="140" x2="620" y2="140"/>
+                    <line x1="820" y1="140" x2="840" y2="140"/>
+
+                    <line x1="670" y1="90" x2="655" y2="75"/>
+                    <line x1="770" y1="190" x2="785" y2="205"/>
+
+                    <line x1="770" y1="90" x2="785" y2="75"/>
+                    <line x1="670" y1="190" x2="655" y2="205"/>
+
+                </g>
+
+            </g>
+
+            <!-- SMALL GEAR -->
+            <g class="gear-small">
+
+                <circle cx="635" cy="220" r="18" />
+                <circle cx="635" cy="220" r="5" fill="#222"/>
+
+            </g>
+
+            <!-- MEDIUM GEAR -->
+            <g class="gear-medium">
+
+                <circle cx="680" cy="270" r="25" />
+                <circle cx="680" cy="270" r="7" fill="#222"/>
+
+            </g>
+
+            <!-- TOP LINES -->
+            <line x1="350" y1="180" x2="620" y2="180"/>
+            <line x1="350" y1="225" x2="620" y2="225"/>
+
+            <!-- LEFT MACHINE -->
+            <rect x="165"
+                  y="420"
+                  width="28"
+                  height="110"
+                  rx="14" />
+
+            <circle cx="179" cy="440" r="4" fill="#222"/>
+            <circle cx="179" cy="470" r="4" fill="#222"/>
+            <circle cx="179" cy="500" r="4" fill="#222"/>
+
+            <!-- LEFT ARM -->
+            <line x1="180"
+                  y1="470"
+                  x2="310"
+                  y2="440"/>
+
+            <!-- VERTICAL BAR -->
+            <line x1="430"
+                  y1="250"
+                  x2="430"
+                  y2="550"/>
+
+            <!-- PENDULUM -->
+            <g class="pendulum">
+
+                <line x1="430"
+                      y1="360"
+                      x2="580"
+                      y2="455"/>
+
+                <circle cx="430"
+                        cy="360"
+                        r="7"
+                        fill="#222"/>
+
+                <circle cx="580"
+                        cy="455"
+                        r="24"
+                        fill="#222"/>
+
+            </g>
+
+        </svg>
 
     </div>
 
-    <!-- MACHINE -->
-    <svg class="machine" viewBox="0 0 1000 700">
-
-        <!-- BIG GEAR -->
-        <g class="gear-big">
-
-            <circle cx="760" cy="130" r="70"
-                fill="none"
-                stroke="#222"
-                stroke-width="4"/>
-
-            <circle cx="760" cy="130" r="22"
-                fill="none"
-                stroke="#222"
-                stroke-width="4"/>
-
-            <!-- teeth -->
-            <g>
-                <line x1="760" y1="40" x2="760" y2="20"/>
-                <line x1="760" y1="240" x2="760" y2="220"/>
-                <line x1="670" y1="130" x2="650" y2="130"/>
-                <line x1="870" y1="130" x2="890" y2="130"/>
-            </g>
-
-        </g>
-
-        <!-- SMALL GEAR -->
-        <g class="gear-small">
-
-            <circle cx="680" cy="210" r="20"
-                fill="none"
-                stroke="#222"
-                stroke-width="4"/>
-
-            <circle cx="680" cy="210" r="5"
-                fill="#222"/>
-
-        </g>
-
-        <!-- MEDIUM GEAR -->
-        <g class="gear-medium">
-
-            <circle cx="720" cy="260" r="28"
-                fill="none"
-                stroke="#222"
-                stroke-width="4"/>
-
-            <circle cx="720" cy="260" r="8"
-                fill="#222"/>
-
-        </g>
-
-        <!-- TOP LINES -->
-        <line x1="350" y1="190"
-              x2="680" y2="190"
-              stroke="#222"
-              stroke-width="2"/>
-
-        <line x1="350" y1="230"
-              x2="680" y2="230"
-              stroke="#222"
-              stroke-width="2"/>
-
-        <!-- LEFT MACHINE -->
-        <rect x="160"
-              y="420"
-              width="35"
-              height="120"
-              rx="15"
-              fill="none"
-              stroke="#222"
-              stroke-width="3"/>
-
-        <circle cx="178"
-                cy="440"
-                r="4"
-                fill="#222"/>
-
-        <circle cx="178"
-                cy="470"
-                r="4"
-                fill="#222"/>
-
-        <circle cx="178"
-                cy="500"
-                r="4"
-                fill="#222"/>
-
-        <!-- ARM -->
-        <line x1="180"
-              y1="470"
-              x2="380"
-              y2="420"
-              stroke="#222"
-              stroke-width="4"/>
-
-        <!-- VERTICAL BAR -->
-        <line x1="420"
-              y1="260"
-              x2="420"
-              y2="560"
-              stroke="#222"
-              stroke-width="4"/>
-
-        <!-- PENDULUM -->
-        <g class="pendulum">
-
-            <line x1="420"
-                  y1="360"
-                  x2="620"
-                  y2="500"
-                  stroke="#222"
-                  stroke-width="4"/>
-
-            <circle cx="420"
-                    cy="360"
-                    r="8"
-                    fill="#222"/>
-
-            <circle cx="620"
-                    cy="500"
-                    r="26"
-                    fill="#222"/>
-
-        </g>
-
-    </svg>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
